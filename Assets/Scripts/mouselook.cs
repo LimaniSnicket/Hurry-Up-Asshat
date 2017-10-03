@@ -5,6 +5,8 @@ using UnityEngine;
 public class mouselook : MonoBehaviour {
 	float verticalLook = 0f;
 	float mouseSensitivity = 100f;
+
+	public score playerTracker;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,9 +15,10 @@ public class mouselook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(playerTracker.playMode == true){
 		float mouseX = Input.GetAxis ("Mouse X");
 		float mouseY = Input.GetAxis ("Mouse Y");
-
 		//transform.Rotate (-mouseY, mouseX, 0f);
 		transform.parent.Rotate (0f, mouseX *Time.deltaTime * mouseSensitivity, 0f);
 		verticalLook -= mouseY * Time.deltaTime *mouseSensitivity; 
@@ -29,6 +32,7 @@ public class mouselook : MonoBehaviour {
 			Cursor.visible = false; //hides mouse cursor
 			Cursor.lockState = CursorLockMode.Locked; //lock cursor to center of window
 
+		}
 		}
 	}
 }

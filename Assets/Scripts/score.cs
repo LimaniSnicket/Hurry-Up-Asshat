@@ -19,18 +19,18 @@ public class score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(playMode == false && Input.GetKey(KeyCode.Return)){
+			playMode = true;
+
+		}
+
+		if(playMode){
 		gameTimer = gameTimer + Time.deltaTime;
 		if(playerScore > 0 && brotherFound == false){
 			playerScore = playerScore - Time.deltaTime * 0.5f;
 		}
-
-		if (memeFound == true && Input.GetKey (KeyCode.Space)) {
-			Debug.Log ("You sent a zesty meme to your brother");
-			memeFound = false;
-			playerScore = playerScore + 5;
-		} else if(memeFound == false && Input.GetKey(KeyCode.Space)){
-			Debug.Log ("Find new memes you normie");
 		}
+
 		
 	}
 
