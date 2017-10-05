@@ -5,6 +5,7 @@ using UnityEngine;
 public class mouselook : MonoBehaviour {
 	float verticalLook = 0f;
 	float mouseSensitivity = 100f;
+	bool mouseHidden = false;
 
 	public score playerTracker;
 	// Use this for initialization
@@ -16,7 +17,6 @@ public class mouselook : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(playerTracker.playMode == true){
 		float mouseX = Input.GetAxis ("Mouse X");
 		float mouseY = Input.GetAxis ("Mouse Y");
 		//transform.Rotate (-mouseY, mouseX, 0f);
@@ -28,11 +28,16 @@ public class mouselook : MonoBehaviour {
 		//manually override z euler angle to 0
 		transform.localEulerAngles = new Vector3(verticalLook,transform.localEulerAngles.y,0f);
 
-		if(Input.GetMouseButtonDown(0)){ //if user clicks, lock mouse
+		if(Input.GetMouseButtonDown(1) && mouseHidden == false){ //if user clicks, lock mouse
 			Cursor.visible = false; //hides mouse cursor
 			Cursor.lockState = CursorLockMode.Locked; //lock cursor to center of window
+			mouseHidden = true;
 
-		}
+		
+		} else if(Input.GetMouseButtonDown(1) && mouseHidden == true){
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+			mouseHidden = false;
 		}
 	}
 }

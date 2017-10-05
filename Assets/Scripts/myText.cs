@@ -16,10 +16,16 @@ public class myText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(ScoreTracker.playMode==true){
-		scoreText.text = "Score: " + ScoreTracker.playerScore;
-		} else if(ScoreTracker.playMode == false){
-			scoreText.text = "Meet up with your brother ASAP! Send him some memes too though. Press Enter to Start!";
+		if(ScoreTracker.playMode==true && ScoreTracker.brotherFound == false){
+			scoreText.text = "Get your stuff and get out the door! Your brother is waiting!";
+		} else if(ScoreTracker.playMode == false && ScoreTracker.brotherFound == false){
+			scoreText.text = "Meet up with your brother ASAP! He's not very patient, \n" +
+				"so hurry up! Press Enter to Start!";
+		}
+		if(ScoreTracker.brotherFound == true){
+			scoreText.text = "You found your brother! He's in a shit mood though.";
+			//ScoreTracker.playMode = false;
+
 		}
 	}
 }

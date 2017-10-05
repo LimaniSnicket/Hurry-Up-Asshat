@@ -17,38 +17,15 @@ public class Memes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		Vector3 memePos = transform.position;
-//		Vector3 playerPos = playerTracker.transform.position;
-//		Vector3 distanceToMeme = (playerPos - memePos);
-//
-//		if(Mathf.Abs(distanceToMeme.x) >range && Mathf.Abs(distanceToMeme.z) >range){
-//			inRange = false;
-//		} else if (Mathf.Abs(distanceToMeme.x) <range && Mathf.Abs(distanceToMeme.z) <range){
-//			inRange = true;
-//		}
-//			
-//
-//		if (inRange== true && found == false){
-//			playerTracker.memeFound = true;
-//		} else if (inRange == false) {
-//			playerTracker.memeFound = false;
-//		} else if(inRange == true && found == true){
-//			playerTracker.memeFound = false;
-//		}
-//
-//		if(inRange == true && found == false && Input.GetKey(KeyCode.Space)){
-//			found = true;
-//		}
-//
-//
-//		transform.position = memePos;
-//		playerTracker.transform.position = playerPos;
+
 	}
 
-	void OnTriggerEnter (Collider playerFoundMe){
-		if(playerFoundMe.gameObject.tag == "Player"){
-			playerTracker.playerScore = playerTracker.playerScore + 5;
+	void OnTriggerStay (Collider playerFoundMe){
+		if (playerFoundMe.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space)) {
+			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
 			Destroy (gameObject);
+		} else {
+			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.5f;
 		}
 		
 	}

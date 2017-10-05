@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9cf8b21d4320e4863943dc77b536cede
+timeCreated: 1507064112
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TypoSlab Irregular Demo
+  fontNames:
+  - TypoSlab Irregular Demo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
