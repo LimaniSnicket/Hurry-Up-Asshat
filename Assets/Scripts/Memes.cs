@@ -21,7 +21,7 @@ public class Memes : MonoBehaviour {
 	}
 
 	void OnTriggerStay (Collider playerFoundMe){
-		if (playerFoundMe.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space)) {
+		if (playerFoundMe.gameObject.tag == "Player" && Input.GetMouseButton(0)) {
 			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
 			Destroy (gameObject);
 		} else {

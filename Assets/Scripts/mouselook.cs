@@ -19,7 +19,6 @@ public class mouselook : MonoBehaviour {
 
 		float mouseX = Input.GetAxis ("Mouse X");
 		float mouseY = Input.GetAxis ("Mouse Y");
-		//transform.Rotate (-mouseY, mouseX, 0f);
 		transform.parent.Rotate (0f, mouseX *Time.deltaTime * mouseSensitivity, 0f);
 		verticalLook -= mouseY * Time.deltaTime *mouseSensitivity; 
 		verticalLook = Mathf.Clamp (verticalLook,-85f,85f); //controls max/min angles player can look at
@@ -32,12 +31,14 @@ public class mouselook : MonoBehaviour {
 			Cursor.visible = false; //hides mouse cursor
 			Cursor.lockState = CursorLockMode.Locked; //lock cursor to center of window
 			mouseHidden = true;
+			Time.timeScale = 1f;
 
 		
-		} else if(Input.GetMouseButtonDown(1) && mouseHidden == true){
+		} else if(Input.GetMouseButtonDown(1) && mouseHidden == true){ //reveals cursor again when player pauses game
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 			mouseHidden = false;
+			Time.timeScale = 0f;
 		}
 	}
 }

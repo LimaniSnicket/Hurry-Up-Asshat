@@ -8,16 +8,26 @@ public class SliderScript : MonoBehaviour {
 	public score ScoreTracker;
 
 	public Slider patienceSlider;
+	public Image brotherSprite;
+	public Sprite passive;
+	public Sprite angery;
 
 	// Use this for initialization
 	void Start () {
-		patienceSlider = GetComponent<Slider> ();
-
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		patienceSlider.value = ScoreTracker.brotherPatience;
+
+		if(ScoreTracker.brotherPatience >= 80f){
+			brotherSprite.sprite = passive;
+		} else {
+			brotherSprite.sprite = angery;
+
+		}
+
 		
 		
 	}

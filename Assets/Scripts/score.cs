@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class score : MonoBehaviour {
 
 	public float brotherPatience = 100f;
 
 	public bool playMode = false;
 	public bool brotherFound = false;
+	public GameObject frontDoorExit;
+	public GameObject frontDoorEnter;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +22,7 @@ public class score : MonoBehaviour {
 		if(playMode==false){
 			Time.timeScale = 0.0f;
 		} 
-		if(playMode == false && Input.GetKey(KeyCode.Return)){
+		if(playMode == false && Input.GetMouseButtonDown(1)){ //pauses game when right mouse button clicked
 			playMode = true;
 			Time.timeScale = 1.0f;
 
@@ -47,6 +50,19 @@ public class score : MonoBehaviour {
 		}
 
 
+	}
+	void OnTriggerStay(Collider triggerInteraction){ //moving in and out of front door
+		Vector3 currentPos = transform.position;
+		if (triggerInteraction.gameObject.tag == "Front Door exit" && Input.GetMouseButton (0)) { //this works
+			currentPos.x = frontDoorEnter.transform.position.x;
+			currentPos.z = frontDoorEnter.transform.position.z;
+		}  
+		if (triggerInteraction.gameObject.tag == "Front Door Enter" && Input.GetMouseButtonDown (0)) { //this doesn't work but I'll come back to it later
+			currentPos.x = frontDoorExit.transform.position.x;
+			currentPos.z = frontDoorExit.transform.position.z;
+		}
+
+		transform.position = currentPos;
 	}
 
 }

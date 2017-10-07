@@ -9,7 +9,7 @@ public class ItemTracker : MonoBehaviour {
 	public bool playerClose = false;
 
 	public Sprite[] text;
-	public SpriteRenderer activeText;
+	public SpriteRenderer activeText; //shows a pick up icon when player is near an item they need/should get
 
 	public Toggle myToggle;
 
@@ -23,12 +23,12 @@ public class ItemTracker : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (itemFound) {
+		if (itemFound) { //checks off missing item in inventory checklist
 			myToggle.isOn = true;
 		} else {
 			myToggle.isOn = false;
 		}
-
+		//note to self: get raycasting for items in this bitch
 		if (playerClose && itemFound == false) {
 			activeText.sprite = text [1];
 		} else {
@@ -40,14 +40,21 @@ public class ItemTracker : MonoBehaviour {
 
 	void OnCollisionStay (Collision playerFoundItem){
 
-		if (playerFoundItem.gameObject.tag == "Player") {
+//		if (playerFoundItem.gameObject.tag == "Player") {
+//			playerClose = true;
+//		} else {
+//			playerClose = false;
+//		}
+
+		if(playerFoundItem.gameObject.tag == "Player" && Input.GetMouseButton(0)){
+			itemFound = true;
+		}
+	}
+	void OnCollisionExit (Collision testStuff){
+		if (testStuff.gameObject.tag == "Player") {
 			playerClose = true;
 		} else {
 			playerClose = false;
-		}
-
-		if(playerFoundItem.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space)){
-			itemFound = true;
 		}
 	}
 

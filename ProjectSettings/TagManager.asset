@@ -8,6 +8,8 @@ TagManager:
   - test
   - Meme
   - Tickets
+  - Front Door exit
+  - Front Door Enter
   layers:
   - Default
   - TransparentFX
