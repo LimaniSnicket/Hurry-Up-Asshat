@@ -415,6 +415,10 @@ ModelImporter:
     100814: Tv_downstairs
     100816: Up_tv
     100818: window
+    100820: Balcony
+    100822: outside_stairs
+    100824: rail
+    100826: Roof
     400000: //RootNode
     400002: pCube1
     400004: pCube2
@@ -825,6 +829,10 @@ ModelImporter:
     400814: Tv_downstairs
     400816: Up_tv
     400818: window
+    400820: Balcony
+    400822: outside_stairs
+    400824: rail
+    400826: Roof
     2300000: pCube2
     2300002: pCube3
     2300004: pCube4
@@ -933,6 +941,10 @@ ModelImporter:
     2300210: Tv_downstairs
     2300212: Up_tv
     2300214: window
+    2300216: Balcony
+    2300218: outside_stairs
+    2300220: rail
+    2300222: Roof
     3300000: pCube2
     3300002: pCube3
     3300004: pCube4
@@ -1041,6 +1053,10 @@ ModelImporter:
     3300210: Tv_downstairs
     3300212: Up_tv
     3300214: window
+    3300216: Balcony
+    3300218: outside_stairs
+    3300220: rail
+    3300222: Roof
     4300000: pPlane1
     4300002: pCube2
     4300004: pCube3
@@ -1149,6 +1165,10 @@ ModelImporter:
     4300210: Chair
     4300212: front_door_frame
     4300214: back_door
+    4300216: Roof
+    4300218: Balcony
+    4300220: outside_stairs
+    4300222: rail
     7400000: Take 001
     9500000: //RootNode
   materials:

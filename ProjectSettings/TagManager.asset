@@ -10,6 +10,9 @@ TagManager:
   - Tickets
   - Front Door exit
   - Front Door Enter
+  - Wallet
+  - Food
+  - Bag
   layers:
   - Default
   - TransparentFX

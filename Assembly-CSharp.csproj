@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Memes.cs" />
      <Compile Include="Assets\Scripts\mouselook.cs" />
      <Compile Include="Assets\Scripts\myText.cs" />
+     <Compile Include="Assets\Scripts\RaycastGrounded.cs" />
      <Compile Include="Assets\Scripts\score.cs" />
      <Compile Include="Assets\Scripts\SliderScript.cs" />
      <None Include="Assets\UI\typoslab_irregular\Read_Me.txt" />
