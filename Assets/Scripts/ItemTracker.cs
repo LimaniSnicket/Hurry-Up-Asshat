@@ -5,56 +5,50 @@ using UnityEngine.UI;
 
 public class ItemTracker : MonoBehaviour {
 
-	public bool itemFound = false;
-	public bool playerClose = false;
+	//alternative raycast that keeps track of what the player is looking at and translates it to the text script mytext
+	public bool loookingAtWallet = false;
+	public bool lookingAtBag = false;
+	public bool lookingAtKeys = false;
+	public bool lookingAtQuest = false;
+	public bool lookingAtTickets = false;
+	public bool lookingAtMeme = false;
+	public bool lookingAtDog = false;
 
-	public Sprite[] text;
-	public SpriteRenderer activeText; //shows a pick up icon when player is near an item they need/should get
+	void Start(){
 
-	public Toggle myToggle;
-
-
-
-	// Use this for initialization
-	void Start () {
-		activeText.sprite = text[0];
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	void FixedUpdate(){
+		Ray myRay = new Ray(transform.position, transform.right *-1f);
 
-		if (itemFound) { //checks off missing item in inventory checklist
-			myToggle.isOn = true;
+		RaycastHit rayHit = new RaycastHit ();
+
+		//max distance for raycast
+		float maxDistance = 4f;
+
+		//optional but recommended, visualize raycast in scene debug
+		Debug.DrawRay(myRay.origin, myRay.direction*maxDistance, Color.red);
+
+		//step 4 actually shoot raycast
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Wallet")) {
+			loookingAtWallet = true;
 		} else {
-			myToggle.isOn = false;
+			loookingAtWallet = false;
 		}
-		//note to self: get raycasting for items in this bitch
-		if (playerClose && itemFound == false) {
-			activeText.sprite = text [1];
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Bag")) {
+			lookingAtBag = true;
 		} else {
-			activeText.sprite = text[0];
+			lookingAtBag = false;
 		}
+
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Meme")) {
+			lookingAtMeme = true;
+		} else {
+			lookingAtMeme = false;
 	}
-
-
-
-	void OnCollisionStay (Collision playerFoundItem){
-
-//		if (playerFoundItem.gameObject.tag == "Player") {
-//			playerClose = true;
-//		} else {
-//			playerClose = false;
-//		}
-
-		if(playerFoundItem.gameObject.tag == "Player" && Input.GetMouseButton(0)){
-			itemFound = true;
-		}
-	}
-	void OnCollisionExit (Collision testStuff){
-		if (testStuff.gameObject.tag == "Player") {
-			playerClose = true;
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Dog")) {
+			lookingAtDog = true;
 		} else {
-			playerClose = false;
+			lookingAtDog = false;
 		}
 	}
 

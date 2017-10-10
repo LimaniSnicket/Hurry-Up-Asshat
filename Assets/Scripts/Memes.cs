@@ -7,7 +7,6 @@ public class Memes : MonoBehaviour {
 	public bool found;
 
 	public score playerTracker;
-	float range = 5f;
 	public bool inRange;
 
 	// Use this for initialization

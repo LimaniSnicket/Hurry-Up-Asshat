@@ -13,6 +13,7 @@ TagManager:
   - Wallet
   - Food
   - Bag
+  - Dog
   layers:
   - Default
   - TransparentFX

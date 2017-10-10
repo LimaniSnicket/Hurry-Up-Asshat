@@ -10,6 +10,7 @@ public class score : MonoBehaviour {
 	public bool brotherFound = false;
 	public GameObject frontDoorExit;
 	public GameObject frontDoorEnter;
+	bool inside = true;
 
 	// Use this for initialization
 	void Start () {
@@ -53,13 +54,14 @@ public class score : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider triggerInteraction){ //moving in and out of front door
 		Vector3 currentPos = transform.position;
-		if (triggerInteraction.gameObject.tag == "Front Door exit" && Input.GetMouseButton (0)) { //this works
+		if (triggerInteraction.gameObject.tag == "Front Door exit" && Input.GetMouseButton (0) && inside == true) { //this works
 			currentPos.x = frontDoorEnter.transform.position.x;
 			currentPos.z = frontDoorEnter.transform.position.z;
-		}  
-		if (triggerInteraction.gameObject.tag == "Front Door Enter" && Input.GetMouseButtonDown (0)) { //this doesn't work but I'll come back to it later
+			inside = false;
+		} else if (triggerInteraction.gameObject.tag == "Front Door Enter" && Input.GetMouseButtonDown (0) && inside == false) { //this doesn't work but I'll come back to it later
 			currentPos.x = frontDoorExit.transform.position.x;
 			currentPos.z = frontDoorExit.transform.position.z;
+			inside = true;
 		}
 
 		transform.position = currentPos;

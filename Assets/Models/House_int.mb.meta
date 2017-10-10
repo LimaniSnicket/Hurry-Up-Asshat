@@ -419,6 +419,11 @@ ModelImporter:
     100822: outside_stairs
     100824: rail
     100826: Roof
+    100828: DICE
+    100830: DICE1
+    100832: Dice1
+    100834: DICE2
+    100836: Guitar:polySurface7
     400000: //RootNode
     400002: pCube1
     400004: pCube2
@@ -833,6 +838,11 @@ ModelImporter:
     400822: outside_stairs
     400824: rail
     400826: Roof
+    400828: DICE
+    400830: DICE1
+    400832: Dice1
+    400834: DICE2
+    400836: Guitar:polySurface7
     2300000: pCube2
     2300002: pCube3
     2300004: pCube4
@@ -945,6 +955,10 @@ ModelImporter:
     2300218: outside_stairs
     2300220: rail
     2300222: Roof
+    2300224: DICE
+    2300226: DICE1
+    2300228: DICE2
+    2300230: Guitar:polySurface7
     3300000: pCube2
     3300002: pCube3
     3300004: pCube4
@@ -1057,6 +1071,10 @@ ModelImporter:
     3300218: outside_stairs
     3300220: rail
     3300222: Roof
+    3300224: DICE
+    3300226: DICE1
+    3300228: DICE2
+    3300230: Guitar:polySurface7
     4300000: pPlane1
     4300002: pCube2
     4300004: pCube3
@@ -1169,6 +1187,10 @@ ModelImporter:
     4300218: Balcony
     4300220: outside_stairs
     4300222: rail
+    4300224: Guitar:polySurface7
+    4300226: DICE
+    4300228: DICE1
+    4300230: DICE2
     7400000: Take 001
     9500000: //RootNode
   materials:
