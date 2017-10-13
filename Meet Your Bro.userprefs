@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RaycastGrounded.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/force.cs">
     <Files>
-      <File FileName="Assets/Scripts/myText.cs" Line="45" Column="62" />
-      <File FileName="Assets/Scripts/RaycastGrounded.cs" Line="73" Column="71" />
+      <File FileName="Assets/Scripts/force.cs" Line="25" Column="86" />
+      <File FileName="Assets/Scripts/RaycastGrounded.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/myText.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/score.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ItemTracker.cs" Line="51" Column="16" />
+      <File FileName="Assets/Scripts/ItemTracker.cs" Line="55" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -39,6 +39,21 @@ public class ItemTracker : MonoBehaviour {
 		} else {
 			lookingAtBag = false;
 		}
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Food")) {
+			lookingAtQuest = true;
+		} else {
+			lookingAtQuest = false;
+		}
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Key")) {
+			lookingAtKeys = true;
+		} else {
+			lookingAtKeys = false;
+		}
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Tickets")) {
+			lookingAtTickets = true;
+		} else {
+			lookingAtTickets = false;
+		}
 
 		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Meme")) {
 			lookingAtMeme = true;

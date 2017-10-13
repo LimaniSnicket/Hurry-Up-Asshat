@@ -8,6 +8,8 @@ public class force : MonoBehaviour {
 	Rigidbody rb;
 	public float gravityStrength = 0.01f;
 	public float speed = 5f;
+
+	public float jumpHeight;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -19,7 +21,9 @@ public class force : MonoBehaviour {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 		inputVector = transform.right * horizontal + transform.forward * vertical;
-
+		if(Input.GetKey(KeyCode.Space)){
+			transform.position = new Vector3(transform.position.x, jumpHeight * Time.deltaTime, transform.position.z);
+		}
 		if(inputVector.magnitude > 1f){
 			inputVector = Vector3.Normalize (inputVector);
 		}

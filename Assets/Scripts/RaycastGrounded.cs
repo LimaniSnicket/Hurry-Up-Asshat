@@ -30,13 +30,26 @@ public class RaycastGrounded : MonoBehaviour {
 		} else {
 			walletToggle.isOn = false;
 		}
-
 		if (bag) {
 			bagToggle.isOn = true;
 		} else {
 			bagToggle.isOn = false;
 		}
-
+		if (key) {
+			keyToggle.isOn = true;
+		} else {
+			keyToggle.isOn = false;
+		}
+		if (quest) {
+			questToggle.isOn = true;
+		} else {
+			questToggle.isOn = false;
+		}
+		if (ticket) {
+			ticketToggle.isOn = true;
+		} else {
+			ticketToggle.isOn = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -60,6 +73,15 @@ public class RaycastGrounded : MonoBehaviour {
 		} else if(Physics.Raycast(myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Bag") && (Input.GetMouseButton(0))){
 			Debug.Log ("Bag");
 			bag = true;
+			Destroy (rayHit.collider.gameObject);
+		} else if(Physics.Raycast(myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Key")&& (Input.GetMouseButton(0))){
+			key = true;
+			Destroy (rayHit.collider.gameObject);
+		} else if(Physics.Raycast(myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Food") && (Input.GetMouseButton(0))){
+			quest = true;
+			Destroy (rayHit.collider.gameObject);
+		} else if(Physics.Raycast(myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Tickets") && (Input.GetMouseButton(0))){
+			ticket = true;
 			Destroy (rayHit.collider.gameObject);
 		}
 
