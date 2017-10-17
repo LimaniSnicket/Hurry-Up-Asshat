@@ -8,9 +8,15 @@ public class score : MonoBehaviour {
 
 	public bool playMode = false;
 	public bool brotherFound = false;
+	public RaycastGrounded rayTrack;
 	public GameObject frontDoorExit;
 	public GameObject frontDoorEnter;
 	bool inside = true;
+	public bool lockedOut = false;
+
+	public bool win = false;
+	public bool lose = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,40 +37,45 @@ public class score : MonoBehaviour {
 
 
 		if(playMode){
-
 			if(brotherPatience >0f && brotherFound == false){
 				brotherPatience = brotherPatience - Time.deltaTime * 0.5f;
 			} else if (brotherPatience >100f){
 				brotherPatience = 100f;
 			}
+
+			if(brotherPatience <= 0f && brotherFound == false){
+				lose = true;
+				playMode = false;
+			}
 		}
-
-
-
-		
-	}
-
-
-	void OnCollisionEnter(Collision objectHittingMe){
-		if (objectHittingMe.gameObject.tag == "Anthony") {
-			brotherFound = true;
-		}
-
-
-	}
-	void OnTriggerStay(Collider triggerInteraction){ //moving in and out of front door
-		Vector3 currentPos = transform.position;
-		if (triggerInteraction.gameObject.tag == "Front Door exit" && Input.GetMouseButton (0) && inside == true) { //this works
-			currentPos.x = frontDoorEnter.transform.position.x;
-			currentPos.z = frontDoorEnter.transform.position.z;
-			inside = false;
-		} else if (triggerInteraction.gameObject.tag == "Front Door Enter" && Input.GetMouseButtonDown (0) && inside == false) { //this doesn't work but I'll come back to it later
+		Vector3 currentPos = transform.position; //getting the player in/out past the door collider
+		if (rayTrack.door == true && inside == true && Input.GetMouseButton (0)) {
 			currentPos.x = frontDoorExit.transform.position.x;
 			currentPos.z = frontDoorExit.transform.position.z;
+			inside = false;
+		} else if (rayTrack.door == true && inside == false && Input.GetMouseButton (0) && rayTrack.key == true) {
+			currentPos.x = frontDoorEnter.transform.position.x;
+			currentPos.z = frontDoorEnter.transform.position.z;
 			inside = true;
+		} else if (rayTrack.door == true && inside == false && Input.GetMouseButton(0) && rayTrack.key == false){ //prevents player from
+			//entering home again if they forget to take thier keys before they leave
+			inside = false;
+			lockedOut = true;
 		}
 
 		transform.position = currentPos;
 	}
+
+
+	void OnCollisionEnter(Collision objectHittingMe){
+		if (objectHittingMe.gameObject.tag == "Anthony" && brotherPatience > 0f) {
+			brotherFound = true;
+			playMode = false;
+			win = true;
+		}
+
+
+	}
+
 
 }

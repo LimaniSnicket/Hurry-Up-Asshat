@@ -13,6 +13,7 @@ public class ItemTracker : MonoBehaviour {
 	public bool lookingAtTickets = false;
 	public bool lookingAtMeme = false;
 	public bool lookingAtDog = false;
+	public bool lookingAtDoor = false;
 
 	void Start(){
 
@@ -23,7 +24,7 @@ public class ItemTracker : MonoBehaviour {
 		RaycastHit rayHit = new RaycastHit ();
 
 		//max distance for raycast
-		float maxDistance = 4f;
+		float maxDistance = 5f;
 
 		//optional but recommended, visualize raycast in scene debug
 		Debug.DrawRay(myRay.origin, myRay.direction*maxDistance, Color.red);
@@ -64,6 +65,12 @@ public class ItemTracker : MonoBehaviour {
 			lookingAtDog = true;
 		} else {
 			lookingAtDog = false;
+		}
+
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Front Door")) {
+			lookingAtDoor = true;
+		} else {
+			lookingAtDoor = false;
 		}
 	}
 

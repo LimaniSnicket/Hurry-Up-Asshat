@@ -15,6 +15,7 @@ TagManager:
   - Bag
   - Dog
   - Key
+  - Front Door
   layers:
   - Default
   - TransparentFX

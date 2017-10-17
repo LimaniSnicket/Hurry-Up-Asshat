@@ -19,13 +19,15 @@ public class myText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(collisionText == false){
+		if (collisionText == false) {
 			if (ScoreTracker.playMode == false && ScoreTracker.brotherFound == false) {
-			scoreText.text = "Meet up with your brother ASAP! He's not very patient, \n" +
-			"so hurry up! Right Click to Start/Pause! Left Click to interact with objects";
-			} else if(ScoreTracker.brotherFound == true){
-			scoreText.text = "You found your brother! He's in a shit mood though.";
-	    	 }else {
+				scoreText.text = "Meet up with your brother ASAP! He's not very patient, \n" +
+				"so hurry up! Right Click to Start/Pause! Left Click to interact with objects";
+			} else if (ScoreTracker.win == true) {
+				scoreText.text = "You found your brother! He's in a shit mood though";
+			} else if(ScoreTracker.lose == true){
+				scoreText.text = "You took too long, your brother got pissed off and left without you!";
+			} else {
 			scoreText.text = "Get your stuff and get out the door! Your brother is waiting!";
 		}
 
@@ -41,11 +43,15 @@ public class myText : MonoBehaviour {
 				scoreText.text = "Grab your keys, otherwise Dad'll flip his shit at you!";
 			} else if (itemText.lookingAtQuest == true) {
 				scoreText.text = "Grab your Quest Bar! You need your protein";
-			} else if(itemText.lookingAtDog == true){
+			} else if (itemText.lookingAtDog == true) {
 				scoreText.text = "HOLY SHIT DOG! SEND IT TO YOUR BROTHER!";
-			} else if(itemText.lookingAtMeme == true){
+			} else if (itemText.lookingAtMeme == true) {
 				scoreText.text = "Ayy lmao 69, your bro would find this funny";
-		    } else {
+			} else if (itemText.lookingAtDoor == true && ScoreTracker.lockedOut == false) {
+				scoreText.text = "Left Click to go through the doorway";
+			} else if(itemText.lookingAtDoor == true && ScoreTracker.lockedOut == true){
+				scoreText.text = "You left your keys inside and locked yourself out, you dumbass";
+			} else {
 				scoreText.text = "Don't forget anything!";
 			}
 		}

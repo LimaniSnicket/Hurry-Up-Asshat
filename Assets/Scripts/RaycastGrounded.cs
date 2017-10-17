@@ -14,8 +14,9 @@ public class RaycastGrounded : MonoBehaviour {
 	bool wallet = false;
 	bool ticket = false;
 	bool bag = false;
-	bool key = false;
+	public bool key = false;
 	bool quest = false;
+	public bool door = false;
 
 	public score playerTracker;
 
@@ -95,6 +96,13 @@ public class RaycastGrounded : MonoBehaviour {
 			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
 		} else {
 			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.5f;
+		}
+
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Front Door")) {
+			door = true;
+			Debug.Log ("works");
+		} else {
+			door = false;
 		}
 
 	}
