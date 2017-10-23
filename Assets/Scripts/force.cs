@@ -21,9 +21,7 @@ public class force : MonoBehaviour {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 		inputVector = transform.right * horizontal + transform.forward * vertical;
-		if(Input.GetKey(KeyCode.Space)){
-			transform.position = new Vector3(transform.position.x, jumpHeight * Time.deltaTime, transform.position.z);
-		}
+
 		if(inputVector.magnitude > 1f){
 			inputVector = Vector3.Normalize (inputVector);
 		}

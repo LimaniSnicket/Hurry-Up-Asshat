@@ -137,4 +137,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 822705eeb3255b973a5e8f0700850f24 Assembly-CSharp.dll:.score
 b5ea78a0056ecec658d4ca75a3290d81 Assembly-CSharp.dll:.Memes
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadScene
-0d90160a59c9ccc86dec5e2ee87e5325 Assembly-CSharp.dll:.ItemTracker
+532a310c8a2b33d858e5e3f0dbc6f8e4 Assembly-CSharp.dll:.ItemTracker

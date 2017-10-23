@@ -11,17 +11,28 @@ public class score : MonoBehaviour {
 	public RaycastGrounded rayTrack;
 	public GameObject frontDoorExit;
 	public GameObject frontDoorEnter;
+	public GameObject indoorStairs;
+	public GameObject outdoorStairs;
 	bool inside = true;
 	public bool lockedOut = false;
 
+	public CanvasGroup myCanvas;
+	public Text scoreText;
+
 	public bool win = false;
 	public bool lose = false;
+
+	public AudioSource doorSounds;
+	public AudioClip locked;
+	public AudioClip unlocked;
+
+	public int myScore = 0; 
 
 
 	// Use this for initialization
 	void Start () {
 
-		
+
 	}
 	
 	// Update is called once per frame
@@ -29,11 +40,37 @@ public class score : MonoBehaviour {
 		if(playMode==false){
 			Time.timeScale = 0.0f;
 		} 
-		if(playMode == false && Input.GetMouseButtonDown(1)){ //pauses game when right mouse button clicked
+		if(playMode == false && Input.GetMouseButtonDown(1) && win == false){ //pauses game when right mouse button clicked
 			playMode = true;
 			Time.timeScale = 1.0f;
 
 		}
+		scoreText.text = "Score: " + (myScore);
+
+
+
+
+		if(brotherPatience <=20f){
+			myScore = myScore + 0;
+		}  
+		if(brotherPatience <= 40f && brotherPatience > 20f && playMode == true && rayTrack.brother == true){
+			myScore = myScore + 20;
+		} 
+		if (brotherPatience <= 60f && brotherPatience > 40f && playMode == true && rayTrack.brother == true){
+			myScore = myScore + 40;
+		} 
+		if(brotherPatience <=80f && brotherPatience > 60f && playMode == true && rayTrack.brother == true){
+			myScore = myScore + 60;
+		} 
+		if(brotherPatience > 80f && playMode == false && rayTrack.brother == true){
+			myScore = myScore + 80;
+		}
+
+		if (rayTrack.brother == true) {
+			win = true;
+			playMode = false;
+			brotherFound = true;
+		} 
 
 
 		if(playMode){
@@ -46,6 +83,7 @@ public class score : MonoBehaviour {
 			if(brotherPatience <= 0f && brotherFound == false){
 				lose = true;
 				playMode = false;
+				myScore = 0;
 			}
 		}
 		Vector3 currentPos = transform.position; //getting the player in/out past the door collider
@@ -53,29 +91,33 @@ public class score : MonoBehaviour {
 			currentPos.x = frontDoorExit.transform.position.x;
 			currentPos.z = frontDoorExit.transform.position.z;
 			inside = false;
+			doorSounds.PlayOneShot (unlocked);
 		} else if (rayTrack.door == true && inside == false && Input.GetMouseButton (0) && rayTrack.key == true) {
 			currentPos.x = frontDoorEnter.transform.position.x;
 			currentPos.z = frontDoorEnter.transform.position.z;
 			inside = true;
-		} else if (rayTrack.door == true && inside == false && Input.GetMouseButton(0) && rayTrack.key == false){ //prevents player from
+			doorSounds.PlayOneShot (unlocked);
+		} else if (rayTrack.door == true && inside == false && Input.GetMouseButtonDown(0) && rayTrack.key == false){ //prevents player from
 			//entering home again if they forget to take thier keys before they leave
 			inside = false;
 			lockedOut = true;
+			doorSounds.PlayOneShot (locked);
+		}
+
+		if (rayTrack.stair == true && inside == true && Input.GetMouseButton(0)){
+			currentPos.x = indoorStairs.transform.position.x;
+			currentPos.y = indoorStairs.transform.position.y;
+			currentPos.z = indoorStairs.transform.position.z;
+		} else if (rayTrack.stair == true && inside == false && Input.GetMouseButton(0)){
+			currentPos.x = outdoorStairs.transform.position.x;
+			currentPos.y = outdoorStairs.transform.position.y;
+			currentPos.z = outdoorStairs.transform.position.z;
 		}
 
 		transform.position = currentPos;
 	}
 
 
-	void OnCollisionEnter(Collision objectHittingMe){
-		if (objectHittingMe.gameObject.tag == "Anthony" && brotherPatience > 0f) {
-			brotherFound = true;
-			playMode = false;
-			win = true;
-		}
-
-
-	}
 
 
 }

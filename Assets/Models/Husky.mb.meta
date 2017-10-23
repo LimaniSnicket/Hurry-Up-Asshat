@@ -12,6 +12,8 @@ ModelImporter:
     100008: pCube11
     100010: pCube8
     100012: pSphere3
+    100014: pCube12
+    100016: pSphere6
     400000: group1
     400002: //RootNode
     400004: imagePlane1
@@ -19,18 +21,26 @@ ModelImporter:
     400008: pCube11
     400010: pCube8
     400012: pSphere3
+    400014: pCube12
+    400016: pSphere6
     2300000: pCube10
     2300002: pCube11
     2300004: pCube8
     2300006: pSphere3
+    2300008: pCube12
+    2300010: pSphere6
     3300000: pCube10
     3300002: pCube11
     3300004: pCube8
     3300006: pSphere3
+    3300008: pCube12
+    3300010: pSphere6
     4300000: pCube8
     4300002: pCube10
     4300004: pCube11
     4300006: pSphere3
+    4300008: pCube12
+    4300010: pSphere6
     9500000: //RootNode
   materials:
     importMaterials: 1

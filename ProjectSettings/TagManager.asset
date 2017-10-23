@@ -16,6 +16,9 @@ TagManager:
   - Dog
   - Key
   - Front Door
+  - Cat
+  - Stairway
+  - Car Alarm
   layers:
   - Default
   - TransparentFX

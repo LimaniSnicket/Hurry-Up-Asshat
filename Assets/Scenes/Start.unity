@@ -1395,7 +1395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Super Secret
+  m_Text: How to Play
 --- !u!222 &1201427718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1537,29 +1537,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Hurry up asshat, there''s
-
-    a Dutch symphonic metal
-
-    concert you''re late for !
-
-    Meet your brother at the
-
-    train station before he
-
-    loses his patience and leaves
-
-    without you !
-
-    Don''t forget your things and
-
-    send your brother some nice
-
-    pics of dogs and 69s on your
-
-    way to keep him in a good
-
-    mood while he''s waiting !'
+  m_Text: "How to Play:\n\nUse your mouse to look around\nand left click on objects
+    to either\ncollect them, use them, or\nsend pictures of \ndogs and stuff to your
+    brother!\nRight click to pause the game\nand use the WASD keys \nto move around\n"
 --- !u!222 &1313913803
 CanvasRenderer:
   m_ObjectHideFlags: 0

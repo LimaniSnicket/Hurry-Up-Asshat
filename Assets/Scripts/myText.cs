@@ -19,20 +19,8 @@ public class myText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (collisionText == false) {
-			if (ScoreTracker.playMode == false && ScoreTracker.brotherFound == false) {
-				scoreText.text = "Meet up with your brother ASAP! He's not very patient, \n" +
-				"so hurry up! Right Click to Start/Pause! Left Click to interact with objects";
-			} else if (ScoreTracker.win == true) {
-				scoreText.text = "You found your brother! He's in a shit mood though";
-			} else if(ScoreTracker.lose == true){
-				scoreText.text = "You took too long, your brother got pissed off and left without you!";
-			} else {
-			scoreText.text = "Get your stuff and get out the door! Your brother is waiting!";
-		}
 
-		}
-		if (collisionText == true) {
+		if (ScoreTracker.playMode == true && ScoreTracker.brotherFound == false && itemText.lookingAtBro == false) {
 			if (itemText.loookingAtWallet == true) {
 				scoreText.text = "Grab your wallet!";
 			} else if (itemText.lookingAtBag == true) {
@@ -49,11 +37,23 @@ public class myText : MonoBehaviour {
 				scoreText.text = "Ayy lmao 69, your bro would find this funny";
 			} else if (itemText.lookingAtDoor == true && ScoreTracker.lockedOut == false) {
 				scoreText.text = "Left Click to go through the doorway";
-			} else if(itemText.lookingAtDoor == true && ScoreTracker.lockedOut == true){
+			} else if (itemText.lookingAtDoor == true && ScoreTracker.lockedOut == true) {
 				scoreText.text = "You left your keys inside and locked yourself out, you dumbass";
+			} else if (itemText.lookingAtCat == true) {
+				scoreText.text = "LOOK AT THAT RAD CAT! SEND IT TO YOUR BROTHER!";
 			} else {
-				scoreText.text = "Don't forget anything!";
+				scoreText.text = "Your brother's running out of patience! Grab your stuff and go meet up with him before he leaves";
 			}
+		} else {
+			scoreText.text = "Meet up with your brother ASAP! He's not very patient, so hurry up! Right Click to Start/Pause! Left Click to interact with objects";
+		}
+
+		if(ScoreTracker.brotherFound == false && itemText.lookingAtBro == true){
+			scoreText.text = "Yo, your bro is over there! Hurry up";
+		} else if(ScoreTracker.win == true){
+			scoreText.text = "You found your brother! Now you can go get crushed at that concert";
+		} else if (ScoreTracker.lose == true){
+			scoreText.text = "You took too long, your brother got pissed off and left without you!";
 		}
 
 
