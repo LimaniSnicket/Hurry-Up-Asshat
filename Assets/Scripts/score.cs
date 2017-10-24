@@ -75,7 +75,7 @@ public class score : MonoBehaviour {
 
 		if(playMode){
 			if(brotherPatience >0f && brotherFound == false){
-				brotherPatience = brotherPatience - Time.deltaTime * 0.5f;
+				brotherPatience = brotherPatience - (Time.deltaTime * 0.2f);
 			} else if (brotherPatience >100f){
 				brotherPatience = 100f;
 			}

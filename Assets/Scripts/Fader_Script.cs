@@ -23,6 +23,8 @@ public class Fader_Script : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+
+
 		Fade_In_Fader.color = All_Alpha; // setting our fade in color
 		Fade_Out_Fader.color = No_Alpha; // setting our fade out color
 

@@ -19,6 +19,7 @@ TagManager:
   - Cat
   - Stairway
   - Car Alarm
+  - Sailor
   layers:
   - Default
   - TransparentFX

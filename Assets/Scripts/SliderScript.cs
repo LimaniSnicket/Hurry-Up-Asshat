@@ -21,7 +21,7 @@ public class SliderScript : MonoBehaviour {
 	void Update () {
 		patienceSlider.value = ScoreTracker.brotherPatience;
 
-		if(ScoreTracker.brotherPatience >= 80f){
+		if(ScoreTracker.brotherPatience >= 40f){
 			brotherSprite.sprite = passive;
 		} else {
 			brotherSprite.sprite = angery;

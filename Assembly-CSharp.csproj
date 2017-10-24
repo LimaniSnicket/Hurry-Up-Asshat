@@ -56,7 +56,6 @@
      <Compile Include="Assets\Scripts\HitByRay.cs" />
      <Compile Include="Assets\Scripts\ItemTracker.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
-     <Compile Include="Assets\Scripts\Memes.cs" />
      <Compile Include="Assets\Scripts\Messages.cs" />
      <Compile Include="Assets\Scripts\mouselook.cs" />
      <Compile Include="Assets\Scripts\myText.cs" />

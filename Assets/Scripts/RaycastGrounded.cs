@@ -113,23 +113,22 @@ public class RaycastGrounded : MonoBehaviour {
 		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Meme") && (Input.GetMouseButton (0))) {
 			Debug.Log ("sick meme bro");
 			Destroy (rayHit.collider.gameObject);
-			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
+			playerTracker.brotherPatience = playerTracker.brotherPatience + 10f;
 			rayHit.transform.SendMessage ("RayHitMe");
 			playerTracker.myScore = playerTracker.myScore + 15;
 			playerAudio.PlayOneShot (cameraClip);
 			meme = true;
 		} else {
 			meme = false;
-			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.5f;
+			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.2f;
 		}
 
 		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Dog") && (Input.GetMouseButton (0))) {
 			Destroy (rayHit.collider.gameObject);
-			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
+			playerTracker.brotherPatience = playerTracker.brotherPatience + 10f;
 			rayHit.transform.SendMessage ("RayHitMe");
 			playerTracker.myScore = playerTracker.myScore + 10;
 			playerAudio.PlayOneShot (cameraClip);
-			rayHit.transform.SendMessage ("SentDog");
 			dog = true;
 		} else {
 			dog = false;
@@ -138,7 +137,7 @@ public class RaycastGrounded : MonoBehaviour {
 
 		if (Physics.Raycast(myRay, out rayHit, maxDistance)&& (rayHit.collider.gameObject.tag == "Cat") && (Input.GetMouseButton(0))){
 			Destroy (rayHit.collider.gameObject);
-			playerTracker.brotherPatience = playerTracker.brotherPatience + 5f;
+			playerTracker.brotherPatience = playerTracker.brotherPatience + 10f;
 			rayHit.transform.SendMessage ("RayHitMe");
 			playerTracker.myScore = playerTracker.myScore + 10;
 			playerAudio.PlayOneShot (cameraClip);
@@ -147,7 +146,7 @@ public class RaycastGrounded : MonoBehaviour {
 			cat = true;
 
 		} else {
-			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.5f;
+			playerTracker.brotherPatience = playerTracker.brotherPatience - Time.deltaTime *0.2f;
 			cat = false;
 		}
 

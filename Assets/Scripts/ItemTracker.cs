@@ -16,6 +16,8 @@ public class ItemTracker : MonoBehaviour {
 	public bool lookingAtCat = false;
 	public bool lookingAtDoor = false;
 	public bool lookingAtBro = false;
+	public bool lookingAtStairs = false;
+	public bool sailor = false;
 
 	public score ScoreTrack;
 
@@ -86,6 +88,17 @@ public class ItemTracker : MonoBehaviour {
 			lookingAtBro = true;
 		} else {
 			lookingAtBro = false;
+		}
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Stairway")) {
+			lookingAtStairs = true;
+		} else {
+			lookingAtStairs = false;
+		}
+
+		if (Physics.Raycast (myRay, out rayHit, maxDistance) && (rayHit.collider.gameObject.tag == "Sailor")) {
+			sailor = true;
+		} else {
+			sailor = false;
 		}
 	}
 

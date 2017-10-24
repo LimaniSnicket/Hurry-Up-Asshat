@@ -7,9 +7,9 @@ public class force : MonoBehaviour {
 	Vector3 inputVector;
 	Rigidbody rb;
 	public float gravityStrength = 0.01f;
-	public float speed = 5f;
+	public float speed;
 
-	public float jumpHeight;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
