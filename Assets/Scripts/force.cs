@@ -9,6 +9,7 @@ public class force : MonoBehaviour {
 	public float gravityStrength = 0.01f;
 	public float speed;
 
+	public DialogueManager dialogueCheck;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +19,13 @@ public class force : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float horizontal = Input.GetAxis ("Horizontal");
-		float vertical = Input.GetAxis ("Vertical");
-		inputVector = transform.right * horizontal + transform.forward * vertical;
-
+		if (!dialogueCheck.dialogueActive) {
+			float horizontal = Input.GetAxis ("Horizontal");
+			float vertical = Input.GetAxis ("Vertical");
+			inputVector = transform.right * horizontal + transform.forward * vertical;
+		} else {
+			inputVector = transform.right * 0f + transform.forward * 0f;
+		}
 		if(inputVector.magnitude > 1f){
 			inputVector = Vector3.Normalize (inputVector);
 		}

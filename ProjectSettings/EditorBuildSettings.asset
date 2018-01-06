@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: fa2b91a5b518841a29204da51b49c875
+  - enabled: 0
+    path: Assets/Anim Tests.unity
+    guid: a7331e842080a4031b6c223aadf99cd3

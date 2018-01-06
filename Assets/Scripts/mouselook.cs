@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class mouselook : MonoBehaviour {
 	float verticalLook = 0f;
-	float mouseSensitivity = 100f;
-	bool mouseHidden = false;
+	public float mouseSensitivity = 60f;
 
-	public score playerTracker;
+	public DialogueManager dialogueCheck;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -27,17 +27,15 @@ public class mouselook : MonoBehaviour {
 		//manually override z euler angle to 0
 		transform.localEulerAngles = new Vector3(verticalLook,transform.localEulerAngles.y,0f);
 
-		if(Input.GetMouseButtonDown(1) && mouseHidden == false){ //if user clicks, lock mouse
-			Cursor.visible = false; //hides mouse cursor
-			Cursor.lockState = CursorLockMode.Locked; //lock cursor to center of window
-			mouseHidden = true;
+		if(!dialogueCheck.dialogueActive){ //if user clicks, lock mouse
+			//Cursor.visible = false; //hides mouse cursor
+			//Cursor.lockState = CursorLockMode.Locked; //lock cursor to center of window
 			Time.timeScale = 1f;
 
 		
-		} else if(Input.GetMouseButtonDown(1) && mouseHidden == true){ //reveals cursor again when player pauses game
+		} else { //reveals cursor again when dialogue menu is active
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
-			mouseHidden = false;
 			Time.timeScale = 0f;
 		}
 	}

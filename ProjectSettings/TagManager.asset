@@ -8,18 +8,15 @@ TagManager:
   - test
   - Meme
   - Tickets
-  - Front Door exit
-  - Front Door Enter
-  - Wallet
-  - Food
   - Bag
   - Dog
-  - Key
   - Front Door
   - Cat
   - Stairway
   - Car Alarm
   - Sailor
+  - NPC
+  - Item
   layers:
   - Default
   - TransparentFX

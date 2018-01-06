@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 8203cac8f124e43ba9610ea4c4752a49
+timeCreated: 1514138236
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back1
+    100002: back1 1
+    100004: back_2
+    100006: back_2 1
+    100008: //RootNode
+    100010: cat
+    100012: cat1
+    100014: front1
+    100016: front1 1
+    100018: front2
+    100020: front2 1
+    100022: ikHandle1
+    100024: ikHandle10
+    100026: ikHandle11
+    100028: ikHandle12
+    100030: ikHandle13
+    100032: ikHandle2
+    100034: ikHandle3
+    100036: ikHandle4
+    100038: ikHandle5
+    100040: ikHandle6
+    100042: ikHandle7
+    100044: ikHandle8
+    100046: ikHandle9
+    100048: imagePlane1
+    100050: imagePlane2
+    100052: imagePlane3
+    100054: joint10
+    100056: joint10 1
+    100058: joint11
+    100060: joint11 1
+    100062: joint12
+    100064: joint12 1
+    100066: joint13
+    100068: joint13 1
+    100070: joint15
+    100072: joint15 1
+    100074: joint15 2
+    100076: joint15 3
+    100078: joint16
+    100080: joint16 1
+    100082: joint16 2
+    100084: joint16 3
+    100086: joint17
+    100088: joint17 1
+    100090: joint17 2
+    100092: joint17 3
+    100094: joint19
+    100096: joint19 1
+    100098: joint19 2
+    100100: joint19 3
+    100102: joint2
+    100104: joint2 1
+    100106: joint20
+    100108: joint20 1
+    100110: joint20 2
+    100112: joint20 3
+    100114: joint21
+    100116: joint21 1
+    100118: joint21 2
+    100120: joint21 3
+    100122: joint3
+    100124: joint3 1
+    100126: joint4
+    100128: joint4 1
+    100130: joint5
+    100132: joint5 1
+    100134: joint6
+    100136: joint6 1
+    100138: joint7
+    100140: joint7 1
+    100142: joint9
+    100144: joint9 1
+    100146: polySurface4
+    100148: polySurface5
+    100150: polySurface6
+    100152: polySurface7
+    100154: pSphere6
+    100156: root
+    100158: root1
+    100160: root10
+    100162: root11
+    100164: root12
+    100166: root12 1
+    100168: root13
+    100170: root13 1
+    100172: root14
+    100174: root14 1
+    100176: root16
+    100178: root16 1
+    100180: root17
+    100182: root18
+    100184: root18 1
+    100186: root19
+    100188: root19 1
+    100190: root2
+    100192: root20
+    100194: root20 1
+    100196: root21
+    100198: root21 1
+    100200: root22
+    100202: root22 1
+    100204: root23
+    100206: root24
+    100208: root25
+    100210: root3
+    100212: root4
+    100214: root5
+    100216: root6
+    100218: root7
+    100220: root8
+    100222: root9
+    100224: Spine
+    100226: Spine1
+    100228: Tail
+    100230: Tail 1
+    400000: back1
+    400002: back1 1
+    400004: back_2
+    400006: back_2 1
+    400008: //RootNode
+    400010: cat
+    400012: cat1
+    400014: front1
+    400016: front1 1
+    400018: front2
+    400020: front2 1
+    400022: ikHandle1
+    400024: ikHandle10
+    400026: ikHandle11
+    400028: ikHandle12
+    400030: ikHandle13
+    400032: ikHandle2
+    400034: ikHandle3
+    400036: ikHandle4
+    400038: ikHandle5
+    400040: ikHandle6
+    400042: ikHandle7
+    400044: ikHandle8
+    400046: ikHandle9
+    400048: imagePlane1
+    400050: imagePlane2
+    400052: imagePlane3
+    400054: joint10
+    400056: joint10 1
+    400058: joint11
+    400060: joint11 1
+    400062: joint12
+    400064: joint12 1
+    400066: joint13
+    400068: joint13 1
+    400070: joint15
+    400072: joint15 1
+    400074: joint15 2
+    400076: joint15 3
+    400078: joint16
+    400080: joint16 1
+    400082: joint16 2
+    400084: joint16 3
+    400086: joint17
+    400088: joint17 1
+    400090: joint17 2
+    400092: joint17 3
+    400094: joint19
+    400096: joint19 1
+    400098: joint19 2
+    400100: joint19 3
+    400102: joint2
+    400104: joint2 1
+    400106: joint20
+    400108: joint20 1
+    400110: joint20 2
+    400112: joint20 3
+    400114: joint21
+    400116: joint21 1
+    400118: joint21 2
+    400120: joint21 3
+    400122: joint3
+    400124: joint3 1
+    400126: joint4
+    400128: joint4 1
+    400130: joint5
+    400132: joint5 1
+    400134: joint6
+    400136: joint6 1
+    400138: joint7
+    400140: joint7 1
+    400142: joint9
+    400144: joint9 1
+    400146: polySurface4
+    400148: polySurface5
+    400150: polySurface6
+    400152: polySurface7
+    400154: pSphere6
+    400156: root
+    400158: root1
+    400160: root10
+    400162: root11
+    400164: root12
+    400166: root12 1
+    400168: root13
+    400170: root13 1
+    400172: root14
+    400174: root14 1
+    400176: root16
+    400178: root16 1
+    400180: root17
+    400182: root18
+    400184: root18 1
+    400186: root19
+    400188: root19 1
+    400190: root2
+    400192: root20
+    400194: root20 1
+    400196: root21
+    400198: root21 1
+    400200: root22
+    400202: root22 1
+    400204: root23
+    400206: root24
+    400208: root25
+    400210: root3
+    400212: root4
+    400214: root5
+    400216: root6
+    400218: root7
+    400220: root8
+    400222: root9
+    400224: Spine
+    400226: Spine1
+    400228: Tail
+    400230: Tail 1
+    2100000: lambert1
+    2100002: Cat
+    2100004: GINGER_BOY
+    2300000: pSphere6
+    3300000: pSphere6
+    4300000: polySurface5
+    4300002: polySurface6
+    4300004: polySurface7
+    4300006: cat
+    4300008: pSphere6
+    4300010: cat1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: cat
+    13700002: cat1
+    13700004: polySurface5
+    13700006: polySurface6
+    13700008: polySurface7
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
