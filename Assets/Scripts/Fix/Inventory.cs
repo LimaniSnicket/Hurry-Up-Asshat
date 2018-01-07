@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour {
 
 	public bool Add(Item item){
 		
-		if(!item.isDefault){
+		if(item.thisItem != Item.Type.Default){
 			if (items.Count >= maxSize) {
 				Debug.Log ("Inventory Full");
 				return false;

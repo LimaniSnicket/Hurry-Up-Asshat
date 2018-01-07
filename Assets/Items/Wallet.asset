@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cd53065bbc64eee9d929a739f161a1, type: 3}
   m_Name: Wallet
   m_EditorClassIdentifier: 
+  thisItem: 1
   item_name: Wallet
-  icon: {fileID: 0}
-  isDefault: 0
+  item_description: A place to carry your cash
+  icon: {fileID: 21300000, guid: 3c1fee00dfca64033ab66301366981b3, type: 3}

@@ -23,11 +23,6 @@ public class DialogueManager : MonoBehaviour {
 
 		dialoguePanel.SetActive (false);
 
-		continueButton = dialoguePanel.transform.FindChild ("Continue").GetComponent<Button>();
-		continueButton.onClick.AddListener (delegate {
-			continueDialogue();
-		});
-
 		if (Instance != null && Instance != this) {
 			Destroy (gameObject);
 		} else {
@@ -40,14 +35,21 @@ public class DialogueManager : MonoBehaviour {
 		dialogueIndex = 0;
 		dialogueLines = new List<string> (lines.Length);
 		dialogueLines.AddRange (lines);
-		foreach(string line in lines){
+		foreach (string line in lines) {
 			dialogueLines.Add (line);
 
 		}
 		this.npcName = npcName;
 		CreateDialogue ();
 
+	}
+	void Update(){
 
+		if (Input.GetKeyUp (KeyCode.Return)) {
+			continueDialogue ();
+		}
+
+	
 	}
 
 	public void CreateDialogue(){

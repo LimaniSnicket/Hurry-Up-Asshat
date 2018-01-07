@@ -8,9 +8,8 @@ public class scoreManager : MonoBehaviour {
 
 	public Slider patienceSlider;
 
-	public float brotherPatience = 300f;
-	public int playerScore = 0;
-	public bool brotherFound = false;
+	public int playerCash = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,14 +18,6 @@ public class scoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		patienceSlider.value = brotherPatience;
-
-		if(brotherPatience >0f && !dialogueCheck.dialogueActive){
-			brotherPatience = brotherPatience - (Time.deltaTime * 0.1f);
-		} else if (brotherPatience >300f){
-			brotherPatience = 300f;
-		}else if(brotherPatience == 0f){
-			playerScore = 0;
-		}
+		
 	}
 }

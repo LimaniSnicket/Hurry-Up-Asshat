@@ -51,15 +51,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\InventoryUI.cs" />
+     <Compile Include="Assets\InventorySlot.cs" />
      <Compile Include="Assets\Scripts\Animations.cs" />
      <Compile Include="Assets\Scripts\CleanRaycast.cs" />
      <Compile Include="Assets\Scripts\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\DogScript.cs" />
      <Compile Include="Assets\Scripts\Fix\Interact.cs" />
      <Compile Include="Assets\Scripts\Fix\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Fix\InventoryUI.cs" />
      <Compile Include="Assets\Scripts\Fix\Item.cs" />
      <Compile Include="Assets\Scripts\Fix\ItemPickup.cs" />
+     <Compile Include="Assets\Scripts\Fix\ToolTip.cs" />
      <Compile Include="Assets\Scripts\force.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\ItemScript.cs" />
@@ -72,6 +74,7 @@
      <Compile Include="Assets\Scripts\Legacy Scripts\score.cs" />
      <Compile Include="Assets\Scripts\Legacy Scripts\SliderScript.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
+     <Compile Include="Assets\Scripts\MiniMapScript.cs" />
      <Compile Include="Assets\Scripts\mouselook.cs" />
      <Compile Include="Assets\Scripts\scoreManager.cs" />
      <None Include="Assets\JSON\LitJson\dllme.txt" />
